@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <string>
 using namespace std;
 
@@ -78,6 +78,7 @@ public:
 
 		if (year < right.year) {
 			cout << "Right date is bigger" << endl;
+		}
 		else {
 			if (month < right.month) {
 				cout << "Right date is bigger" << endl;
@@ -89,15 +90,14 @@ public:
 				else {
 					cout << "Left date is bigger" << endl;
 				}
-					if (day == right.day && month == right.month && year == right.year) {
-						cout << "These are the same dates!" << endl;
-					}
+				if (day == right.day && month == right.month && year == right.year) {
+					cout << "These are the same dates!" << endl;
 				}
 			}
 		}
 		return *this;
 	}
-	
-
 };
+*/
+
 
