@@ -1,89 +1,58 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+
 #include <string>
 #include <iostream>
-#include "MediumClass.cpp"
+#include "Classwork.h"
 
 using namespace std;
 
 
 int main()
 {
-	int day = 0;
-	int month = 0;
-	int year = 0;
+	struct values {
+		double santim;
+		double kilometers;
+		double miles;
+	};
 
-	int day2 = 18;
-	int month2 = 7;
-	int year2 = 1653;
-	string date ;
-
-	//Enter date
-
-
-
-	cout << "Entered the date string: " << endl;
-
-
-	do
-	{
-		string tempDate = "";
-		cin >> date;
-
-
-		for (int i = 0; i < 10; i++) {
-			if (date[i] != '.') {
-				tempDate += date[i];
-			}
-
-
-			if (i == 1) {
-				day = stoi(tempDate);
-				tempDate = "";
-			} else if (i == 4) {
-				month = stoi(tempDate);
-				tempDate = "";
-			}
-			else if (i == 9) {
-				year = stoi(tempDate);
-				tempDate = "";
-			}
-		}
-
-
-
-		if ((day > 31) || (day < 1) || (month > 12) || (month < 1) || (year < 0))
-			cout << "The date you typed contains errors. Check if such date can exist and type again: ";
-		
-	} while ((day > 31) || (day < 1) || (month > 12) || (month < 1) || (year < 0));
-
-
-
-
-	Date newDate1(day, month, year);
-
-	//почему-то не работает вывод
-	newDate1.print();
-
-	Date newDate2(day2, month2, year2);
-	newDate2.print();
+	values first;
+	Distance firstdist(4);
 	
-	Date newDate3(day2, month2, year2);
-	newDate3.print();
+	first.kilometers = firstdist.to_kilometers();
+	Distance seconddist = firstdist + first.kilometers * 1000;
+	first.miles = firstdist.to_miles();
+	Distance thirddist = firstdist + first.miles * 60000;
+	
+	cout << firstdist << endl;
+	cout << "To kilometers value: " << first.kilometers << endl;
+	cout << "To miles value: " << first.miles << endl;
+	cout << seconddist << " First dist + "<< first.kilometers <<" kilometers"<< endl;
+	cout << thirddist << " First dist + " << first.miles << " miles" << endl;
 
+	thirddist -= first.kilometers * 1000;
+	cout << thirddist << " Third dist itself minus number " << first.kilometers * 1000 << endl;
 
-	//Операторы
-	newDate3 = newDate2;
-	newDate3.print();
+	Distance fourthdist = firstdist * thirddist;
+	cout << fourthdist << " Fourth dist multiply on " << thirddist.meters << endl;
 
-	//Не работают + и -
-	newDate3 + 5;
-	newDate3.print();
+	firstdist = fourthdist;
+	cout << firstdist << " First dist is now equal to fourth dist " << endl;
 
-	newDate3 - 5;
-	newDate3.print();
+	if (firstdist == fourthdist)
+		cout << "First dist equal to fourth dist" << endl;
+	else
+		cout << "First dist is not equal to fourth dist" << endl;
 
-	newDate3 >> newDate2;
+	if (fourthdist >= firstdist)
+		cout << "Fourth dist is bigger or equal to first dist" << endl;
+	else
+		cout << "Fourth dist is smaller than first dist" << endl;
+	
+	
+	
+	system("Pause");
 
-
-
-	return 0;
+	
+	
 }
