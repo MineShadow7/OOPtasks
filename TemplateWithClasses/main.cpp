@@ -3,64 +3,53 @@
 
 #include <string>
 #include <iostream>
-#include "Task1.cpp"
-#include "Task2.h"
+#include "Classwork.h"
 
 using namespace std;
 
 
 int main()
 {
-	//Task2
-	int size, size2;
-	char arraynumber;
+	struct values {
+		double santim;
+		double kilometers;
+		double miles;
+	};
 
+	values first;
+	Distance firstdist(4);
+	
+	first.kilometers = firstdist.to_kilometers();
+	Distance seconddist = firstdist + first.kilometers * 1000;
+	first.miles = firstdist.to_miles();
+	Distance thirddist = firstdist + first.miles * 60000;
+	
+	cout << firstdist << endl;
+	cout << "To kilometers value: " << first.kilometers << endl;
+	cout << "To miles value: " << first.miles << endl;
+	cout << seconddist << " First dist + "<< first.kilometers <<" kilometers"<< endl;
+	cout << thirddist << " First dist + " << first.miles << " miles" << endl;
 
-	cout << "Enter size of the number: ";
-	cin >> size; 
+	thirddist -= first.kilometers * 1000;
+	cout << thirddist << " Third dist itself minus number " << first.kilometers * 1000 << endl;
 
-	Octonumb octoNumber1(size);
-	cin >> octoNumber1;
+	Distance fourthdist = firstdist * thirddist;
+	cout << fourthdist << " Fourth dist multiply on " << thirddist.meters << endl;
 
-	octoNumber1.numberToChar(octoNumber1.getNumber());
-	cout << octoNumber1;
+	firstdist = fourthdist;
+	cout << firstdist << " First dist is now equal to fourth dist " << endl;
 
-	cout << "Enter size of the number 2: ";
-	cin >> size2;
-	Octonumb octoNumber2(size2);
-	cin >> octoNumber2;
-
-	octoNumber2.numberToChar(octoNumber2.getNumber());
-	cout << octoNumber2;
-
-	//octoNumber1 = octoNumber2;
-	//cout << octoNumber1;
-
-	/*
-	octoNumber1 + 3;
-	cout << octoNumber1;
-
-	octoNumber1 - 3;
-	cout << octoNumber1;
-	*/
-
-	if (octoNumber1 == octoNumber2)
-		cout << "Same!" << endl;
+	if (firstdist == fourthdist)
+		cout << "First dist equal to fourth dist" << endl;
 	else
-		cout << "Different!" << endl;
+		cout << "First dist is not equal to fourth dist" << endl;
 
-	if (octoNumber1 < octoNumber2)
-		cout << "Smaller!" << endl;
+	if (fourthdist >= firstdist)
+		cout << "Fourth dist is bigger or equal to first dist" << endl;
 	else
-		cout << "Not smaller!" << endl;
-
-	if (octoNumber1 > octoNumber2)
-		cout << "Bigger!" << endl;
-	else
-		cout << "Not bigger!" << endl;
-
-	arraynumber = octoNumber1[2];
-	cout << arraynumber << endl;
+		cout << "Fourth dist is smaller than first dist" << endl;
+	
+	
 	
 	system("Pause");
 
