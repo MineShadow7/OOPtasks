@@ -3,19 +3,21 @@
 
 #include <string>
 #include <iostream>
-#include "Task1.cpp"
+
+//#include "Task1.cpp"
 #include "Task2.h"
+#include "Task3.h"
 
 using namespace std;
-
 
 int main()
 {
 	//Task2
+	/*
 	int size, size2;
 	char arraynumber;
-
-
+	*/
+	/*
 	cout << "Enter size of the number: ";
 	cin >> size; 
 
@@ -43,7 +45,7 @@ int main()
 	octoNumber1 - 3;
 	cout << octoNumber1;
 	*/
-
+	/*
 	if (octoNumber1 == octoNumber2)
 		cout << "Same!" << endl;
 	else
@@ -61,9 +63,19 @@ int main()
 
 	arraynumber = octoNumber1[2];
 	cout << arraynumber << endl;
-	
-	system("Pause");
+	*/
 
+	//Task 3
+	setlocale(LC_ALL, "Russian");
+	MyTextEditor obj1;
+	cout << obj1;
+	cin >> obj1;
+
+	obj1.PrintLenText();
+	obj1.HavaAChoiceThenWork();
+
+
+	
 	
 	
 }

@@ -20,6 +20,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Task3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Task2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
