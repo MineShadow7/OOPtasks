@@ -92,7 +92,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\GitHub\ExampleOOP\DeskApp\Desk</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\itmm-ua\Desktop\task\OOPtasks\DeskApp\Desk</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
