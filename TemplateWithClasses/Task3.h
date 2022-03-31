@@ -55,19 +55,19 @@ void HavaAChoiceThenWork() {
 	}
  }
 void PrintLenText() {
-	system("CLS");
-	SetConsoleCursorPosition(hStdOut, cursorPos);
-	FillConsoleOutputCharacter(hStdOut, (TCHAR)'_', len, cursorPos, &cWrittenChars);  // записывает символ в экранном буфере консоли заданное число раз
-	SetConsoleCursorPosition(hStdOut, cursorPos);
+ system("CLS");
+ SetConsoleCursorPosition(hStdOut, cursorPos);
+ FillConsoleOutputCharacter(hStdOut, (TCHAR)'_', len, cursorPos, &cWrittenChars);  // записывает символ в экранном буфере консоли заданное число раз
+ SetConsoleCursorPosition(hStdOut, cursorPos);
 }
 void WorkWithText() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	int zagl = 67; //Заглушка как учили.
+	int zagl = 67;  //Заглушка как учили.
 	baselen = len;
 	CONSOLE_SCREEN_BUFFER_INFO cbsi;
 	while (zagl != KEY_EXIT && len > 0) {
-	switch (zagl){
+	switch (zagl) {
 	case KEY_ARROW_LEFT:
 		GetConsoleScreenBufferInfo(hStdOut, &cbsi);
 		cursorPos.X = cbsi.dwCursorPosition.X - 1;
@@ -89,23 +89,25 @@ void WorkWithText() {
 				std::cout << (char)zagl;
 				len--;
 				break;
-	}
  }
- Characters = new char[baselen + 1];
- DWORD dwRead;
- ReadConsoleOutputCharacter(hStdOut, Characters, baselen, cursorPos, &dwRead);
- Characters[baselen] = '\0';
- system("CLS");
- cout << "Your final text: " << Characters << endl;
- len = baselen;
- system("pause");
- system("CLS");
- selectedChoice = 1;
- HavaAChoiceThenWork();
 }
- friend ostream& operator<<(ostream& out, const MyTextEditor& r);
- friend istream& operator>>(istream& in, MyTextEditor& r);
+Characters = new char[baselen + 1];
+DWORD dwRead;
+ReadConsoleOutputCharacter(hStdOut, Characters, baselen, cursorPos, &dwRead);
+Characters[baselen] = '\0';
+system("CLS");
+cout << "Your final text: " << Characters << endl;
+len = baselen;
+system("pause");
+system("CLS");
+selectedChoice = 1;
+HavaAChoiceThenWork();
+}
+
+friend ostream& operator<<(ostream& out, const MyTextEditor& r);
+friend istream& operator>>(istream& in, MyTextEditor& r);
 };
+
 istream& operator>>(istream& in, MyTextEditor& right) {
  cout << "Отступ сверху (Y): ";
  in >> right.cursorPos.Y;
