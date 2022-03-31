@@ -1,89 +1,69 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+
 #include <string>
 #include <iostream>
-#include "MediumClass.cpp"
+#include "Task1.cpp"
+#include "Task2.h"
 
 using namespace std;
 
 
 int main()
 {
-	int day = 0;
-	int month = 0;
-	int year = 0;
-
-	int day2 = 18;
-	int month2 = 7;
-	int year2 = 1653;
-	string date ;
-
-	//Enter date
+	//Task2
+	int size, size2;
+	char arraynumber;
 
 
+	cout << "Enter size of the number: ";
+	cin >> size; 
 
-	cout << "Entered the date string: " << endl;
+	Octonumb octoNumber1(size);
+	cin >> octoNumber1;
 
+	octoNumber1.numberToChar(octoNumber1.getNumber());
+	cout << octoNumber1;
 
-	do
-	{
-		string tempDate = "";
-		cin >> date;
+	cout << "Enter size of the number 2: ";
+	cin >> size2;
+	Octonumb octoNumber2(size2);
+	cin >> octoNumber2;
 
+	octoNumber2.numberToChar(octoNumber2.getNumber());
+	cout << octoNumber2;
 
-		for (int i = 0; i < 10; i++) {
-			if (date[i] != '.') {
-				tempDate += date[i];
-			}
+	//octoNumber1 = octoNumber2;
+	//cout << octoNumber1;
 
+	/*
+	octoNumber1 + 3;
+	cout << octoNumber1;
 
-			if (i == 1) {
-				day = stoi(tempDate);
-				tempDate = "";
-			} else if (i == 4) {
-				month = stoi(tempDate);
-				tempDate = "";
-			}
-			else if (i == 9) {
-				year = stoi(tempDate);
-				tempDate = "";
-			}
-		}
+	octoNumber1 - 3;
+	cout << octoNumber1;
+	*/
 
+	if (octoNumber1 == octoNumber2)
+		cout << "Same!" << endl;
+	else
+		cout << "Different!" << endl;
 
+	if (octoNumber1 < octoNumber2)
+		cout << "Number 1 Smaller!" << endl;
+	else
+		cout << "Number 1 Not smaller!" << endl;
 
-		if ((day > 31) || (day < 1) || (month > 12) || (month < 1) || (year < 0))
-			cout << "The date you typed contains errors. Check if such date can exist and type again: ";
-		
-	} while ((day > 31) || (day < 1) || (month > 12) || (month < 1) || (year < 0));
+	if (octoNumber1 > octoNumber2)
+		cout << "Number 1 Bigger!" << endl;
+	else
+		cout << "Number 1 Not bigger!" << endl;
 
-
-
-
-	Date newDate1(day, month, year);
-
-	//почему-то не работает вывод
-	newDate1.print();
-
-	Date newDate2(day2, month2, year2);
-	newDate2.print();
+	arraynumber = octoNumber1[1];
+	cout << arraynumber << endl;
 	
-	Date newDate3(day2, month2, year2);
-	newDate3.print();
+	system("Pause");
 
-
-	//Операторы
-	newDate3 = newDate2;
-	newDate3.print();
-
-	//Не работают + и -
-	newDate3 + 5;
-	newDate3.print();
-
-	newDate3 - 5;
-	newDate3.print();
-
-	newDate3 >> newDate2;
-
-
-
-	return 0;
+	
+	
 }
