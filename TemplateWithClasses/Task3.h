@@ -1,4 +1,4 @@
- //Copyright 2022 Andrew Karagodin
+// Copyright 2022 Andrew Karagodin
 
 #pragma once
 
@@ -14,22 +14,22 @@ using namespace std;
 #define KEY_ARROW_LEFT 75
 
 class MyTextEditor{
-protected:
-COORD cursorPos;
-HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
-DWORD cWrittenChars;
-int len;
-int baselen;
-bool selectedChoice;
-char* Characters;
+ protected:
+  COORD cursorPos;
+  HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+  DWORD cWrittenChars;
+  int len;
+  int baselen;
+  bool selectedChoice;
+  char* Characters;
  public:
-MyTextEditor() {
-len = 1;
-baselen = len;
-selectedChoice = 0;
-cursorPos.X = 0;
-cursorPos.Y = 0;
-SetConsoleCursorPosition(hStdOut, cursorPos);
+  MyTextEditor() {
+  len = 1;
+  baselen = len;
+  selectedChoice = 0;
+  cursorPos.X = 0;
+  cursorPos.Y = 0;
+  SetConsoleCursorPosition(hStdOut, cursorPos);
 }
 void printValues() {
 cout << "X: " << cursorPos.X << endl << "Y: " << cursorPos.Y << endl << "len: " << len << endl;
@@ -42,13 +42,13 @@ cout << "Enter = Да" << endl << "Esc = Нет" << endl;
 ch = _getche();
 if (ch == KEY_EXIT) {
 system("pause");
-}else {
+} else {
 if (ch == '\r') {
 PrintLenText();
 WorkWithText();
+   }
   }
- }
-}else {
+} else {
 ch = '\n';
 }
 if (ch == '\n') {
@@ -91,7 +91,7 @@ if (zagl == KEY_EXIT || zagl == ARROW_KEY || zagl == KEY_SPACE
 std::cout << (char)zagl;
 len--;
 break;
- }
+  }
 }
 Characters = new char[baselen + 1];
 DWORD dwRead;
