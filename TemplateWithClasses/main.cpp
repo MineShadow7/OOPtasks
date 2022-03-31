@@ -50,16 +50,16 @@ int main()
 		cout << "Different!" << endl;
 
 	if (octoNumber1 < octoNumber2)
-		cout << "Smaller!" << endl;
+		cout << "Number 1 Smaller!" << endl;
 	else
-		cout << "Not smaller!" << endl;
+		cout << "Number 1 Not smaller!" << endl;
 
 	if (octoNumber1 > octoNumber2)
-		cout << "Bigger!" << endl;
+		cout << "Number 1 Bigger!" << endl;
 	else
-		cout << "Not bigger!" << endl;
+		cout << "Number 1 Not bigger!" << endl;
 
-	arraynumber = octoNumber1[2];
+	arraynumber = octoNumber1[1];
 	cout << arraynumber << endl;
 	
 	system("Pause");

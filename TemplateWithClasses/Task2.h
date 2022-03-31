@@ -135,20 +135,21 @@ public:
 	}
 
 	char operator[](int index) {
-		if (index > size - 1) {
-			cout << "Index is greater than size of the array!";
-			system("Pause");
-			exit(1);
+		if (index > size) {
+			cout << "Invalid index of the number. Index is bigger than max size";
+			return 0;
 		}
-
-		else
+		else {
 			if (index < 0) {
-				cout << "Index is smaller than minimum required!";
-				system("Pause");
-				exit(1);
+				cout << "Invalid index of the number. Index is smaller than minimal size";
+				return 0;
 			}
 			else
+			{
 				return numstr[index];
+			}
+		}
+
 	}
 };
 
