@@ -1,4 +1,5 @@
-//Copyright 2022 Andrew Karagodin
+//Copyright 2022 Andrew Karagodin 
+
 #pragma once
 
 #include <iostream>
@@ -29,7 +30,7 @@ selectedChoice = 0;
 cursorPos.X = 0;
 cursorPos.Y = 0;
 SetConsoleCursorPosition(hStdOut, cursorPos);
-};
+}
 void printValues() {
 cout << "X: " << cursorPos.X << endl << "Y: " << cursorPos.Y << endl << "len: " << len << endl;
 }
@@ -41,13 +42,12 @@ cout << "Enter = Да" << endl << "Esc = Нет" << endl;
 ch = _getche();
 if (ch == KEY_EXIT) {
 system("pause");
-}
-else {
-	if (ch == '\r') {
-	PrintLenText();
-	WorkWithText();
+}else {
+if (ch == '\r') {
+PrintLenText();
+WorkWithText();
+   }
   }
- }
 }
 else {
 ch = '\n';
@@ -55,7 +55,7 @@ ch = '\n';
 if (ch == '\n') {
 PrintLenText();
 WorkWithText();
- }
+  }
 }
 void PrintLenText() {
 system("CLS");
@@ -66,7 +66,7 @@ SetConsoleCursorPosition(hStdOut, cursorPos);
 void WorkWithText() {
 SetConsoleCP(1251);
 SetConsoleOutputCP(1251);
-int zagl = 67;  //Заглушка как учили.
+int zagl = 67;
 baselen = len;
 CONSOLE_SCREEN_BUFFER_INFO cbsi;
 while (zagl != KEY_EXIT && len > 0) {
@@ -79,11 +79,11 @@ len++;
 zagl = 67;
 break;
 case KEY_ARROW_RIGHT:
-GetConsoleScreenBufferInfo(hStdOut, &cbsi);
-cursorPos.X = cbsi.dwCursorPosition.X + 1;
-SetConsoleCursorPosition(hStdOut, cursorPos);
-len--;
-zagl = 67;
+	GetConsoleScreenBufferInfo(hStdOut, &cbsi);
+	cursorPos.X = cbsi.dwCursorPosition.X + 1;
+	SetConsoleCursorPosition(hStdOut, cursorPos);
+	len--;
+	zagl = 67;
 break;
 default:
 zagl = _getch();
@@ -92,7 +92,7 @@ if (zagl == KEY_EXIT || zagl == ARROW_KEY || zagl == KEY_SPACE
 std::cout << (char)zagl;
 len--;
 break;
- }
+  }
 }
 Characters = new char[baselen + 1];
 DWORD dwRead;
@@ -109,7 +109,6 @@ HavaAChoiceThenWork();
 
 friend ostream& operator<<(ostream& out, const MyTextEditor& r);
 friend istream& operator>>(istream& in, MyTextEditor& r);
-
 };
 
 istream& operator>>(istream& in, MyTextEditor& right) {
