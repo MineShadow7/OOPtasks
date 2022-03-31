@@ -1,4 +1,4 @@
-//Copyright 2022 Andrew Karagodin 
+ //Copyright 2022 Andrew Karagodin
 
 #pragma once
 
@@ -23,7 +23,7 @@ int baselen;
 bool selectedChoice;
 char* Characters;
  public:
-MyTextEditor(){
+MyTextEditor() {
 len = 1;
 baselen = len;
 selectedChoice = 0;
@@ -46,10 +46,9 @@ system("pause");
 if (ch == '\r') {
 PrintLenText();
 WorkWithText();
-   }
   }
-}
-else {
+ }
+}else {
 ch = '\n';
 }
 if (ch == '\n') {
@@ -79,11 +78,11 @@ len++;
 zagl = 67;
 break;
 case KEY_ARROW_RIGHT:
-	GetConsoleScreenBufferInfo(hStdOut, &cbsi);
-	cursorPos.X = cbsi.dwCursorPosition.X + 1;
-	SetConsoleCursorPosition(hStdOut, cursorPos);
-	len--;
-	zagl = 67;
+GetConsoleScreenBufferInfo(hStdOut, &cbsi);
+cursorPos.X = cbsi.dwCursorPosition.X + 1;
+SetConsoleCursorPosition(hStdOut, cursorPos);
+len--;
+zagl = 67;
 break;
 default:
 zagl = _getch();
@@ -92,7 +91,7 @@ if (zagl == KEY_EXIT || zagl == ARROW_KEY || zagl == KEY_SPACE
 std::cout << (char)zagl;
 len--;
 break;
-  }
+ }
 }
 Characters = new char[baselen + 1];
 DWORD dwRead;
