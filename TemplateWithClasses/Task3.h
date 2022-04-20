@@ -31,22 +31,22 @@ class MyTextEditor{
   cursorPos.Y = 0;
   SetConsoleCursorPosition(hStdOut, cursorPos);
 }
-void printValues() {
-cout << "X: " << cursorPos.X << endl << "Y: " << cursorPos.Y << endl << "len: " << len << endl;
+  void printValues() {
+    cout << "X: " << cursorPos.X << endl << "Y: " << cursorPos.Y << endl << "len: " << len << endl;
 }
-void HavaAChoiceThenWork() {
-char ch = ' ';
-if (selectedChoice == 1) {
-cout << "Хотите продолжить редактирование текста?" << endl;
-cout << "Enter = Да" << endl << "Esc = Нет" << endl;
-ch = _getche();
-if (ch == KEY_EXIT) {
-system("pause");
+  void HavaAChoiceThenWork() {
+  char ch = ' ';
+  if (selectedChoice == 1) {
+    cout << "Хотите продолжить редактирование текста?" << endl;
+    cout << "Enter = Да" << endl << "Esc = Нет" << endl;
+    ch = _getche();
+  if (ch == KEY_EXIT) {
+    system("pause");
 } else {
-if (ch == '\r') {
-PrintLenText();
-WorkWithText();
-   }
+  if (ch == '\r') {
+    PrintLenText();
+    WorkWithText();
+    }
   }
 } else {
 ch = '\n';
