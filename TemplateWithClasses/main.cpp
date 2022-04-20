@@ -3,10 +3,12 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 
 //#include "Task1.cpp"
 #include "Task2.h"
 #include "Task3.h"
+#include "Task4.h"
 
 using namespace std;
 
@@ -66,16 +68,25 @@ int main()
 	*/
 
 	//Task 3
-	setlocale(LC_ALL, "Russian");
+	/*setlocale(LC_ALL, "Russian");
 	MyTextEditor obj1;
 	cout << obj1;
 	cin >> obj1;
 
 	obj1.PrintLenText();
 	obj1.HavaAChoiceThenWork();
+	*/
+	int count;
+	string test;
+	ifstream file("C:\\Users\\shad-\\Documents\\Programming\\TemplateWithClasses Ч копи€\\Task4\\x64\\Debug\\Films.txt");
+	file >> count;
+	file.close();
+	FilmLib lib1(count);
+	lib1.PrintArr();
+	lib1.ReadFromFile();
+	lib1.PrintArr();
+	lib1.FilmSort();
+	lib1.PrintArr();
+	system("Pause");
 
-
-	
-	
-	
 }

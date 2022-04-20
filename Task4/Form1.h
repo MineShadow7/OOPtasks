@@ -1,4 +1,5 @@
 #pragma once
+#include "Task3.h"
 
 namespace CppCLRWinformsProjekt {
 
@@ -34,6 +35,28 @@ namespace CppCLRWinformsProjekt {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+	protected:
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Button^ button8;
+	private: System::Windows::Forms::Button^ button9;
 
 	private:
 		/// <summary>
@@ -48,12 +71,281 @@ namespace CppCLRWinformsProjekt {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"Form1";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->button9 = (gcnew System::Windows::Forms::Button());
+			this->SuspendLayout();
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(44, 47);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(185, 21);
+			this->comboBox1->TabIndex = 0;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label1->Location = System::Drawing::Point(44, 100);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(86, 20);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"Режиссер:";
+			this->label1->Click += gcnew System::EventHandler(this, &Form1::label1_Click);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label2->Location = System::Drawing::Point(136, 100);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(97, 20);
+			this->label2->TabIndex = 2;
+			this->label2->Text = L"Sample Text";
+			this->label2->Click += gcnew System::EventHandler(this, &Form1::label2_Click);
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label3->Location = System::Drawing::Point(44, 134);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(95, 20);
+			this->label3->TabIndex = 3;
+			this->label3->Text = L"Сценарист:";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label4->Location = System::Drawing::Point(44, 166);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(105, 20);
+			this->label4->TabIndex = 4;
+			this->label4->Text = L"Композитор:";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label5->Location = System::Drawing::Point(44, 200);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(112, 20);
+			this->label5->TabIndex = 5;
+			this->label5->Text = L"Дата выхода:";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label6->Location = System::Drawing::Point(145, 134);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(97, 20);
+			this->label6->TabIndex = 6;
+			this->label6->Text = L"Sample Text";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label7->Location = System::Drawing::Point(155, 166);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(97, 20);
+			this->label7->TabIndex = 7;
+			this->label7->Text = L"Sample Text";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label8->Location = System::Drawing::Point(162, 200);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(97, 20);
+			this->label8->TabIndex = 8;
+			this->label8->Text = L"Sample Text";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label9->Location = System::Drawing::Point(44, 232);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(62, 20);
+			this->label9->TabIndex = 9;
+			this->label9->Text = L"Сборы:";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label10->Location = System::Drawing::Point(112, 232);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(97, 20);
+			this->label10->TabIndex = 10;
+			this->label10->Text = L"Sample Text";
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(17, 263);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(126, 40);
+			this->button1->TabIndex = 11;
+			this->button1->Text = L"Добавить фильм";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(149, 263);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(150, 40);
+			this->button2->TabIndex = 12;
+			this->button2->Text = L"Изменить данные выбранного фильма";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(17, 309);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(126, 40);
+			this->button3->TabIndex = 13;
+			this->button3->Text = L"Найти фильм по названию и году";
+			this->button3->UseVisualStyleBackColor = true;
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(149, 309);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(150, 40);
+			this->button4->TabIndex = 14;
+			this->button4->Text = L"Выдать все фильмы режиссера";
+			this->button4->UseVisualStyleBackColor = true;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(442, 63);
+			this->textBox1->Multiline = true;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(261, 189);
+			this->textBox1->TabIndex = 15;
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(17, 355);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(126, 40);
+			this->button5->TabIndex = 16;
+			this->button5->Text = L"Выдать фильмы вышедшие в году";
+			this->button5->UseVisualStyleBackColor = true;
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(149, 355);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(150, 40);
+			this->button6->TabIndex = 17;
+			this->button6->Text = L"Топ фильмов с наибольшими сборами";
+			this->button6->UseVisualStyleBackColor = true;
+			// 
+			// button7
+			// 
+			this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button7->Location = System::Drawing::Point(17, 401);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(126, 52);
+			this->button7->TabIndex = 18;
+			this->button7->Text = L"Выдать фильмы с наибольшими сборами в опр году";
+			this->button7->UseVisualStyleBackColor = true;
+			// 
+			// button8
+			// 
+			this->button8->Location = System::Drawing::Point(149, 402);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(150, 51);
+			this->button8->TabIndex = 19;
+			this->button8->Text = L"Узнать текущее число фильмов";
+			this->button8->UseVisualStyleBackColor = true;
+			// 
+			// button9
+			// 
+			this->button9->Location = System::Drawing::Point(83, 459);
+			this->button9->Name = L"button9";
+			this->button9->Size = System::Drawing::Size(146, 44);
+			this->button9->TabIndex = 20;
+			this->button9->Text = L"Удалить фильм по названию";
+			this->button9->UseVisualStyleBackColor = true;
+			// 
+			// Form1
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(1028, 519);
+			this->Controls->Add(this->button9);
+			this->Controls->Add(this->button8);
+			this->Controls->Add(this->button7);
+			this->Controls->Add(this->button6);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->button4);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->label10);
+			this->Controls->Add(this->label9);
+			this->Controls->Add(this->label8);
+			this->Controls->Add(this->label7);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->comboBox1);
+			this->Name = L"Form1";
+			this->Text = L"Form1";
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
 		}
 #pragma endregion
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+		
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+	}
 	};
 }
