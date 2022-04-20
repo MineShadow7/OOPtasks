@@ -1,89 +1,81 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+
 #include <string>
 #include <iostream>
-#include "MediumClass.cpp"
+
+//#include "Task1.cpp"
+#include "Task2.h"
+#include "Task3.h"
 
 using namespace std;
 
-
 int main()
 {
-	int day = 0;
-	int month = 0;
-	int year = 0;
+	//Task2
+	/*
+	int size, size2;
+	char arraynumber;
+	*/
+	/*
+	cout << "Enter size of the number: ";
+	cin >> size; 
 
-	int day2 = 18;
-	int month2 = 7;
-	int year2 = 1653;
-	string date ;
+	Octonumb octoNumber1(size);
+	cin >> octoNumber1;
 
-	//Enter date
+	octoNumber1.numberToChar(octoNumber1.getNumber());
+	cout << octoNumber1;
+
+	cout << "Enter size of the number 2: ";
+	cin >> size2;
+	Octonumb octoNumber2(size2);
+	cin >> octoNumber2;
+
+	octoNumber2.numberToChar(octoNumber2.getNumber());
+	cout << octoNumber2;
+
+	//octoNumber1 = octoNumber2;
+	//cout << octoNumber1;
+
+	/*
+	octoNumber1 + 3;
+	cout << octoNumber1;
+
+	octoNumber1 - 3;
+	cout << octoNumber1;
+	*/
+	/*
+	if (octoNumber1 == octoNumber2)
+		cout << "Same!" << endl;
+	else
+		cout << "Different!" << endl;
+
+	if (octoNumber1 < octoNumber2)
+		cout << "Smaller!" << endl;
+	else
+		cout << "Not smaller!" << endl;
+
+	if (octoNumber1 > octoNumber2)
+		cout << "Bigger!" << endl;
+	else
+		cout << "Not bigger!" << endl;
+
+	arraynumber = octoNumber1[2];
+	cout << arraynumber << endl;
+	*/
+
+	//Task 3
+	setlocale(LC_ALL, "Russian");
+	MyTextEditor obj1;
+	cout << obj1;
+	cin >> obj1;
+
+	obj1.PrintLenText();
+	obj1.HavaAChoiceThenWork();
 
 
-
-	cout << "Entered the date string: " << endl;
-
-
-	do
-	{
-		string tempDate = "";
-		cin >> date;
-
-
-		for (int i = 0; i < 10; i++) {
-			if (date[i] != '.') {
-				tempDate += date[i];
-			}
-
-
-			if (i == 1) {
-				day = stoi(tempDate);
-				tempDate = "";
-			} else if (i == 4) {
-				month = stoi(tempDate);
-				tempDate = "";
-			}
-			else if (i == 9) {
-				year = stoi(tempDate);
-				tempDate = "";
-			}
-		}
-
-
-
-		if ((day > 31) || (day < 1) || (month > 12) || (month < 1) || (year < 0))
-			cout << "The date you typed contains errors. Check if such date can exist and type again: ";
-		
-	} while ((day > 31) || (day < 1) || (month > 12) || (month < 1) || (year < 0));
-
-
-
-
-	Date newDate1(day, month, year);
-
-	//почему-то не работает вывод
-	newDate1.print();
-
-	Date newDate2(day2, month2, year2);
-	newDate2.print();
 	
-	Date newDate3(day2, month2, year2);
-	newDate3.print();
-
-
-	//Операторы
-	newDate3 = newDate2;
-	newDate3.print();
-
-	//Не работают + и -
-	newDate3 + 5;
-	newDate3.print();
-
-	newDate3 - 5;
-	newDate3.print();
-
-	newDate3 >> newDate2;
-
-
-
-	return 0;
+	
+	
 }
