@@ -13,6 +13,7 @@ using namespace std;
 #define KEY_ARROW_RIGHT 77
 #define KEY_ARROW_LEFT 75
 
+
 class MyTextEditor{
  protected:
   COORD cursorPos;
@@ -20,6 +21,7 @@ class MyTextEditor{
   DWORD cWrittenChars;
   int len;
   int baselen;
+  int startX, startY;
   bool selectedChoice;
   char* Characters;
  public:
@@ -37,13 +39,15 @@ class MyTextEditor{
   void HavaAChoiceThenWork() {
   char ch = ' ';
   if (selectedChoice == 1) {
-    cout << "Хотите продолжить редактирование текста?" << endl;
-    cout << "Enter = Да" << endl << "Esc = Нет" << endl;
+    cout << "Do you want to continue working?" << endl;
+    cout << "Enter = Yes" << endl << "Esc = No" << endl;
     ch = _getche();
   if (ch == KEY_EXIT) {
     system("pause");
 } else {
   if (ch == '\r') {
+    cursorPos.X = startX;
+    cursorPos.Y = startY;
     PrintLenText();
     WorkWithText();
     }
@@ -111,17 +115,19 @@ friend istream& operator>>(istream& in, MyTextEditor& r);
 };
 
 istream& operator>>(istream& in, MyTextEditor& right) {
-cout << "Отступ сверху (Y): ";
+cout << "Push from top (Y): ";
 in >> right.cursorPos.Y;
-cout << "Отступ слева (X): ";
+cout << "Push from left (X): ";
 in >> right.cursorPos.X;
-cout << "Длина текста (len): ";
+cout << "Text lenght (len): ";
 in >> right.len;
 right.printValues();
+right.startX = right.cursorPos.X;
+right.startY = right.cursorPos.Y;
 return in;
 }
 
 ostream& operator<<(ostream& out, const MyTextEditor& r) {
-out << "Введите значения для отступа слева (x), сверху (y), а также длину текста(len)" << endl;
+out << "Input coords to push from left (x), top (y), and text lenght (len)" << endl;
 return out;
 }
