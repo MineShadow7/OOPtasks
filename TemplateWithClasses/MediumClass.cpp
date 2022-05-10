@@ -16,24 +16,53 @@ public:
 		day = 0;
 		month = 0;
 		year = 0;
+		string_date = "";
 	}
 
-	Date(int _day, int _month, int _year)
+	Date(string _date)
 	{
-		day = _day;
-		month = _month;
-		year = _year;
-		string_date = to_string(_day) + "." + to_string(_month) + "." + to_string(_year);
+		datetoint(_date);
+		string_date = to_string(day) + "." + to_string(month) + "." + to_string(year);
 	}
 
 	void print()
 	{
-		cout << "Now the date is: " << string_date << endl;
+		cout << "Now the date is: " << string_date << endl << day << endl << month << endl << year << endl;
+	}
+
+	void datetoint(string date) {
+		do
+		{
+			string tempDate = "";
+			for (int i = 0; i < 10; i++) {
+				if (date[i] != '.') {
+					tempDate += date[i];
+				}
+
+
+				if (i == 1) {
+					day = stoi(tempDate);
+					tempDate = "";
+				}
+				else if (i == 4) {
+					month = stoi(tempDate);
+					tempDate = "";
+				}
+				else if (i == 9) {
+					year = stoi(tempDate);
+					tempDate = "";
+				}
+			}
+			if ((day > 31) || (day < 1) || (month > 12) || (month < 1) || (year < 0))
+				cout << "The date you typed contains errors. Check if such date can exist and type again: ";
+
+		} while ((day > 31) || (day < 1) || (month > 12) || (month < 1) || (year < 0));
+		
 	}
 
 
-	//Перегрузка
-	//Оператор присваивания
+	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	Date& operator=(const Date& right) {
 		if (this == &right) {
 			return *this;
@@ -44,7 +73,7 @@ public:
 		return *this;
 	}
 
-	//Оператор сложения
+	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	Date& operator+(const int number) {
 		day += number;
 		if (day > 31) {
@@ -58,7 +87,7 @@ public:
 		return *this;
 	}
 
-	//Оператор вычитания
+	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	Date& operator-(const int number) {
 		day -= number;
 		if (day < 1) {
@@ -73,30 +102,49 @@ public:
 		return *this;
 	}
 
-	//Оператор сравнения
-	Date& operator>>(const Date& right) {
-
+	bool operator>(const Date& right) {
+		if (year > right.year) {
+			return 1;
+		}
+		else {
+			if (month > right.month) {
+				return 1;
+			}
+			else {
+				if (day > right.day) {
+					return 1;
+				}
+				else {
+					return 0;
+				}
+			}
+		}
+	}
+	bool operator<(const Date& right) {
 		if (year < right.year) {
-			cout << "Right date is bigger" << endl;
+			return 1;
 		}
 		else {
 			if (month < right.month) {
-				cout << "Right date is bigger" << endl;
+				return 1;
 			}
 			else {
 				if (day < right.day) {
-					cout << "Right date is bigger" << endl;
+					return 1;
 				}
 				else {
-					cout << "Left date is bigger" << endl;
-				}
-				if (day == right.day && month == right.month && year == right.year) {
-					cout << "These are the same dates!" << endl;
+					return 0;
 				}
 			}
-		}	return *this;
+		}
 	}
-	
+	bool operator==(const Date& right) {
+		if (year == right.year && month < right.month && day < right.day) {
+			return 1;
+		}
+		else {
+			return 0;
+		}
+	}
 
 };
-

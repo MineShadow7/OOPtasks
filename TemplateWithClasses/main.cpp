@@ -7,83 +7,49 @@ using namespace std;
 
 int main()
 {
-	int day = 0;
-	int month = 0;
-	int year = 0;
-
-	int day2 = 18;
-	int month2 = 7;
-	int year2 = 1653;
-	string date ;
+	string date;
+	string date2 = "21.08.1669";
 
 	//Enter date
-
-
-
 	cout << "Entered the date string: " << endl;
+	cin >> date;
+	Date newDate1(date);
 
-
-	do
-	{
-		string tempDate = "";
-		cin >> date;
-
-
-		for (int i = 0; i < 10; i++) {
-			if (date[i] != '.') {
-				tempDate += date[i];
-			}
-
-
-			if (i == 1) {
-				day = stoi(tempDate);
-				tempDate = "";
-			} else if (i == 4) {
-				month = stoi(tempDate);
-				tempDate = "";
-			}
-			else if (i == 9) {
-				year = stoi(tempDate);
-				tempDate = "";
-			}
-		}
-
-
-
-		if ((day > 31) || (day < 1) || (month > 12) || (month < 1) || (year < 0))
-			cout << "The date you typed contains errors. Check if such date can exist and type again: ";
-		
-	} while ((day > 31) || (day < 1) || (month > 12) || (month < 1) || (year < 0));
-
-
-
-
-	Date newDate1(day, month, year);
-
-	//почему-то не работает вывод
+	//пїЅпїЅпїЅпїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+	cout << "Test the first date" << endl;
 	newDate1.print();
 
-	Date newDate2(day2, month2, year2);
+	cout << "Test the second date" << endl;
+	Date newDate2(date2);
 	newDate2.print();
 	
-	Date newDate3(day2, month2, year2);
+	cout << "Test the third date. Must be the same as the first one" << endl;
+	Date newDate3(date);
 	newDate3.print();
 
 
-	//Операторы
+	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	cout << "The third date must be the same as the second now." << endl;
 	newDate3 = newDate2;
 	newDate3.print();
 
-	//Не работают + и -
+	//пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ + пїЅ -
+	cout << "Third date + 5" << endl;
 	newDate3 + 5;
 	newDate3.print();
 
-	newDate3 - 5;
+	cout << "Third date - 7" << endl;
+	newDate3 - 7;
 	newDate3.print();
 
-	newDate3 >> newDate2;
+	cout << "Compare 3rd date < 2nd date" << endl;
+	if (newDate3 < newDate2) {
+		cout << "True" << endl;
+	}
+	else {
+		cout << "False" << endl;
+	}
 
-
-
+	system("Pause");
 	return 0;
 }
