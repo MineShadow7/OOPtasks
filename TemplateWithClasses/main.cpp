@@ -33,32 +33,37 @@ int main()
 	octoNumber2.numberToChar(octoNumber2.getNumber());
 	cout << octoNumber2;
 
-	//octoNumber1 = octoNumber2;
-	//cout << octoNumber1;
-
-	/*
-	octoNumber1 + 3;
+	cout << "Operator = " << endl;
+	octoNumber1 = octoNumber2;
 	cout << octoNumber1;
 
+	cout << "Operator + 4" << endl;
+	octoNumber1 + 4;
+	cout << "+4" << endl << octoNumber1;
+
+	cout << "Operator - 3" << endl;
 	octoNumber1 - 3;
-	cout << octoNumber1;
-	*/
-
+	cout << "-3" << endl << octoNumber1;
+	
+	cout << "Operator == " << endl;
 	if (octoNumber1 == octoNumber2)
 		cout << "Same!" << endl;
 	else
 		cout << "Different!" << endl;
 
+	cout << "Operator < " << endl;
 	if (octoNumber1 < octoNumber2)
 		cout << "Number 1 Smaller!" << endl;
 	else
 		cout << "Number 1 Not smaller!" << endl;
 
+	cout << "Operator > " << endl;
 	if (octoNumber1 > octoNumber2)
 		cout << "Number 1 Bigger!" << endl;
 	else
 		cout << "Number 1 Not bigger!" << endl;
 
+	cout << "Operator [1] " << endl;
 	arraynumber = octoNumber1[1];
 	cout << arraynumber << endl;
 	

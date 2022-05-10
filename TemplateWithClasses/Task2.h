@@ -1,12 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
-
 #pragma once
-
-
 #include <iostream>
+#include <fstream>
 #include <string>
-
-
 
 using namespace std;
 
@@ -18,18 +14,16 @@ protected:
 	string tmp;
 
 public:
-	//Конструктор инициализации
+	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 	Octonumb() {
 		size = 0;
 		number = 0;
-
 	}
 
 	Octonumb(int _size) {
 		size = _size;
 	}
-
 
 	~Octonumb() {
 		delete[] numstr;
@@ -71,27 +65,27 @@ public:
 		size = right.size;
 		numberToChar(right.tmp);
 	}
-	/*
-	Octonumb& operator+(const Octonumb& right) {
+	
+	Octonumb& operator+(int _number) {
 		Octonumb res;
 		number = atoi(numstr);
-		res.number = number + right.size;
+		res.number = number + _number;
 		res.tmp = new char[size];
 		res.tmp = to_string(res.number);
 		numberToChar(res.tmp);
 		return res;
 	}
 
-	Octonumb& operator+(const Octonumb& right) {
+	Octonumb& operator-(int _number) {
 		Octonumb res;
 		number = atoi(numstr);
-		res.number = number - right.size;
+		res.number = number - _number;
 		res.tmp = new char[size];
 		res.tmp = to_string(res.number);
 		numberToChar(res.tmp);
 		return res;
 	}
-	*/
+	
 
 	bool operator==(const Octonumb& right) {
 		if (size != right.size)
@@ -152,8 +146,6 @@ public:
 
 	}
 };
-
-
 
 istream& operator>>(istream& in, Octonumb& right) {
 	cout << "Input number: ";
