@@ -68,7 +68,7 @@ public:
 			return *this;
 		}
 		day = right.day;
-		month = right.day;
+		month = right.month;
 		year = right.year;
 		return *this;
 	}
