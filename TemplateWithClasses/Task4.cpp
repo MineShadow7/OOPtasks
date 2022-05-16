@@ -60,7 +60,7 @@ void FilmLib::GetArr() {
 	}
 }
 void FilmLib::ReadFromFile() {
-	ifstream file("C:\\Users\\shad-\\Documents\\Programming\\TemplateWithClasses Ч копи€\\Task4\\x64\\Debug\\Films.txt");
+	ifstream file("C:\\Users\\shad-\\Documents\\Programming\\OOPtasks\\Films\\Films.txt");
 	string s;
 	int index = 0;
 	int i = 0;
