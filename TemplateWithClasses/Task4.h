@@ -10,10 +10,30 @@ protected:
 	string filmScenar;
 	string filmCompos;
 	string filmDate;
-	int filmCash;
+	double filmCash;
 public:
+	Film() {
+		filmName = "Empty";
+		filmScenar = "Empty";
+		filmCompos = "Empty";
+		filmDate = "Empty";
+		filmCash = 0;
+	}
+	string getName();
+	string getScenar();
+	string getCompos();
+	string getDate();
+	int getCash();
+	void setName(string);
+	void setScenar(string);
+	void setCompos(string);
+	void setDate(string);
+	void setCash(double);
+	friend ostream& operator<<(ostream& out, const Film& r);
 
 };
+
+
 class FilmLib {
 protected:
 	int filmAmount;
@@ -21,28 +41,13 @@ protected:
 public:
 	FilmLib(int count) {
 		filmAmount = count;
-		filmName = new string[filmAmount];
-		filmScenar = new string[filmAmount];
-		filmCompos = new string[filmAmount];
-		filmDate = new string[filmAmount];
-		filmCash = new int[filmAmount];
-		for (int i = 0; i < filmAmount; i++) {
-			filmName[i] = "blank";
-			filmScenar[i] = "blank";
-			filmCompos[i] = "blank";
-			filmDate[i] = "blank";
-			filmCash[i] = 0;
-		}
+		allFilms = new Film[filmAmount];
 	}
 	~FilmLib() {
-		delete[] filmName;
-		delete[] filmScenar;
-		delete[] filmCompos;
-		delete[] filmDate;
-		delete[] filmCash;
+		delete[] allFilms;
 	}
 	void PrintArr();
-	void FilmSort();
+	void FilmSortByName();
 	void GetArr();
 	void ReadFromFile();
 };

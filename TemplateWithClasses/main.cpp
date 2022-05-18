@@ -25,7 +25,7 @@ int main()
 	cout << "Read from file arrays" << endl;
 	lib1.PrintArr();
 	cout << "Sort arrays" << endl;
-	lib1.FilmSort();
+	lib1.FilmSortByName();
 	lib1.PrintArr();
 	system("Pause");
 
