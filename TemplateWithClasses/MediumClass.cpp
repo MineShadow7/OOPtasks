@@ -74,7 +74,7 @@ public:
 	}
 
 	//�������� ��������
-	Date& operator+(const int number) {
+	Date& operator+=(const int number) {
 		day += number;
 		if (day > 31) {
 			month += 1;
@@ -88,7 +88,7 @@ public:
 	}
 
 	//�������� ���������
-	Date& operator-(const int number) {
+	Date& operator-=(const int number) {
 		day -= number;
 		if (day < 1) {
 			day = 1;

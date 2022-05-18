@@ -35,11 +35,11 @@ int main()
 
 	//�� �������� + � -
 	cout << "Third date + 5" << endl;
-	newDate3 + 5;
+	newDate3 += 5;
 	newDate3.print();
 
 	cout << "Third date - 7" << endl;
-	newDate3 - 7;
+	newDate3 -= 7;
 	newDate3.print();
 
 	cout << "Compare 3rd date < 2nd date" << endl;
