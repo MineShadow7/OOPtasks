@@ -4,14 +4,20 @@
 #include <fstream>
 using namespace std;
 
+class Film {
+protected:
+	string filmName;
+	string filmScenar;
+	string filmCompos;
+	string filmDate;
+	int filmCash;
+public:
+
+};
 class FilmLib {
 protected:
 	int filmAmount;
-	string *filmName;
-	string *filmScenar;
-	string *filmCompos;
-	string *filmDate;
-	int *filmCash;
+	Film* allFilms;
 public:
 	FilmLib(int count) {
 		filmAmount = count;
