@@ -7,6 +7,7 @@
 #include <conio.h>
 #include <Windows.h>
 using namespace std;
+#define KEY_ENTER '\r'
 #define KEY_EXIT 27
 #define ARROW_KEY 224
 #define KEY_SPACE 0
@@ -43,9 +44,9 @@ class MyTextEditor{
     cout << "Enter = Yes" << endl << "Esc = No" << endl;
     ch = _getche();
   if (ch == KEY_EXIT) {
-    system("pause");
+      exit(1);
 } else {
-  if (ch == '\r') {
+  if (ch == KEY_ENTER) {
     cursorPos.X = startX;
     cursorPos.Y = startY;
     PrintLenText();
@@ -72,7 +73,7 @@ SetConsoleOutputCP(1251);
 int zagl = 67;
 baselen = len;
 CONSOLE_SCREEN_BUFFER_INFO cbsi;
-while (zagl != KEY_EXIT && len > 0) {
+while (zagl != KEY_ENTER && len > 0) {
 switch (zagl) {
 case KEY_ARROW_LEFT:
 GetConsoleScreenBufferInfo(hStdOut, &cbsi);
