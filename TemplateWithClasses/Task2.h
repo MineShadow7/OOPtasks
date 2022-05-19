@@ -120,10 +120,10 @@ public:
 		else {
 			const char* rightchar = right.numstr;
 			const char* leftchar = numstr;
-			if (strcmp(leftchar, rightchar) == -1)
-				return 1;
-			else
+			if (strcmp(leftchar, rightchar) == 1)
 				return 0;
+			else
+				return 1;
 		}
 	}
 	bool operator>(const Octonumb& right) {
@@ -174,5 +174,3 @@ ostream& operator<<(ostream& out, const Octonumb& r) {
 	out << endl;
 	return out;
 }
-
-
