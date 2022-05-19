@@ -27,7 +27,8 @@ public:
 
 	void print()
 	{
-		cout << "Now the date is: " << string_date << endl << day << endl << month << endl << year << endl;
+		string_date = to_string(day) + "." + to_string(month) + "." + to_string(year);
+		cout << "Now the date is: " << string_date << endl;
 	}
 
 	void datetoint(string date) {
