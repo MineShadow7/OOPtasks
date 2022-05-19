@@ -12,6 +12,7 @@ protected:
 	int size;
 	int number;
 	char *numstr;
+	char* realnum;
 	string tmp;
 
 public:
@@ -25,6 +26,7 @@ public:
 	}
 	~Octonumb() {
 		delete[] numstr;
+		delete[] realnum;
 	}
 	int getSize() {
 		return size;
@@ -34,6 +36,7 @@ public:
 	}
 	void numberToChar(string tmp) {
 		numstr = new char[size];
+		realnum = new char[size];
 		int flag = 0;
 		for (int i = 0; i < size; i++) {
 			if (tmp[i] > '7') {
@@ -42,6 +45,7 @@ public:
 		}
 		if (flag != 1) {
 			strcpy(numstr, tmp.c_str());
+			realnum = numstr;
 		}
 		else {
 			cout << "Input number outside of range! Rebuilding the number...";
@@ -73,6 +77,7 @@ public:
 		}
 		for (int k = 0; k < size; k++) {
 			numstr[k] = test[k];
+			realnum[k] = numstr[k];
 			cout << numstr[k];
 		}
 		cout << endl;
@@ -86,13 +91,11 @@ public:
 		numberToChar(right.numstr);
 	}
 	Octonumb& operator+=(int _number) {
-		Octonumb res;
 		number = atoi(numstr);
-		res.number = number + _number;
-		res.tmp = new char[size];
-		res.tmp = to_string(res.number);
-		numberToChar(res.tmp);
-		return res;
+		number += _number;
+		tmp = to_string(number);
+		numberToChar(tmp);
+		return *this;
 	}
 	Octonumb& operator-=(int _number) {
 		Octonumb res;
@@ -171,7 +174,7 @@ ostream& operator<<(ostream& out, const Octonumb& r) {
 
 	out << "your number is: ";
 	for (int i = 0; i < r.size; i++) {
-		out << r.numstr[i];
+		out << r.realnum[i];
 	}
 	out << endl;
 	return out;
