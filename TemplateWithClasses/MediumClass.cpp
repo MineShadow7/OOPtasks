@@ -60,8 +60,18 @@ public:
 		} while ((day > 31) || (day < 1) || (month > 12) || (month < 1) || (year < 0));
 		
 	}
-
-
+private:
+	void checkDate() {
+		if (day > 31) {
+			month += 1;
+			day -= 31;
+		}
+		if (month > 12) {
+			month -= 12;
+			year += 1;
+		}
+	}
+public:
 	//����������
 	//�������� ������������
 	Date& operator=(const Date& right) {
@@ -101,6 +111,16 @@ public:
 			year = 1;
 		}
 		return *this;
+	}
+
+	Date& operator+(const Date& r) {
+		Date res;
+		res.day = r.day + day;
+		res.month = r.month + month;
+		res.year = r.year + year;
+		res.checkDate();
+		res.string_date = to_string(res.day) + "." + to_string(res.month) + "." + to_string(res.year);
+		return res;
 	}
 
 	bool operator>(const Date& right) {

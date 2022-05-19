@@ -42,6 +42,11 @@ int main()
 	newDate3 -= 7;
 	newDate3.print();
 
+	Date newDate4;
+	cout << "Test 4" << endl;
+	newDate4 = newDate3 + newDate2;
+	newDate4.print();
+
 	cout << "Compare 3rd date < 2nd date" << endl;
 	if (newDate3 < newDate2) {
 		cout << "True" << endl;
