@@ -24,10 +24,7 @@ public:
 	Octonumb(int _size) {
 		size = _size;
 	}
-	~Octonumb() {
-		delete[] numstr;
-		delete[] realnum;
-	}
+
 	int getSize() {
 		return size;
 	}
@@ -98,13 +95,11 @@ public:
 		return *this;
 	}
 	Octonumb& operator-=(int _number) {
-		Octonumb res;
 		number = atoi(numstr);
-		res.number = number - _number;
-		res.tmp = new char[size];
-		res.tmp = to_string(res.number);
-		numberToChar(res.tmp);
-		return res;
+		number -= _number;
+		tmp = to_string(number);
+		numberToChar(tmp);
+		return *this;
 	}
 	bool operator==(const Octonumb& right) {
 		if (size != right.size)
