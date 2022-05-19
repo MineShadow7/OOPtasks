@@ -85,7 +85,7 @@ public:
 		size = right.size;
 		numberToChar(right.numstr);
 	}
-	Octonumb& operator+(int _number) {
+	Octonumb& operator+=(int _number) {
 		Octonumb res;
 		number = atoi(numstr);
 		res.number = number + _number;
@@ -94,7 +94,7 @@ public:
 		numberToChar(res.tmp);
 		return res;
 	}
-	Octonumb& operator-(int _number) {
+	Octonumb& operator-=(int _number) {
 		Octonumb res;
 		number = atoi(numstr);
 		res.number = number - _number;

@@ -38,11 +38,11 @@ int main()
 	cout << octoNumber1;
 
 	cout << "Operator + 4" << endl;
-	octoNumber1 + 4;
+	octoNumber1 += 4;
 	cout << "+4" << endl << octoNumber1;
 
 	cout << "Operator - 3" << endl;
-	octoNumber1 - 3;
+	octoNumber1 -= 3;
 	cout << "-3" << endl << octoNumber1;
 	
 	cout << "Operator == " << endl;
