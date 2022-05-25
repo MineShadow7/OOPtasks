@@ -128,3 +128,57 @@ void FilmLib::ReadFromFile() {
 	}
 	file.close();
 }
+
+void FilmLib::StartScreen() {
+	system("CLS");
+	int selectedchoice;
+	int selectedindex = 1;
+	cout << "Welcome to the Film Library!" << endl;
+	cout << "All actions are assigned to number. Enter the number to continue:" << endl;
+	cout << "1: Print All Films." << endl;
+	cout << "2: Create new film." << endl;
+	cout << "3: Change film info selected by a name" << endl;
+	cout << "4: Find film by name and date" << endl;
+	cout << "5: Find all films by date" << endl;
+	cout << "6: Find film by most Cash profits" << endl;
+	cout << "7: Find films by most Cash in selected year" << endl;
+	cout << "8: Print total amount of films" << endl;
+	cout << "9: Delete Film by name" << endl;
+	cout << "10: Get Films from file" << endl;
+	cout << "Print the number of required action: ";
+	cin >> selectedchoice;
+	switch (selectedchoice)
+	{
+	case 1:
+		PrintArr();
+		break;
+	case 2:
+		CreateFilm();
+		break;
+	case 3:
+		EditFilmbyName();
+		break;
+	case 4:
+		FindFilmbyNameandDate();
+		break;
+	case 5:
+		FindFilmbyDate();
+		break;
+	case 6:
+		FindFilmbyCash();
+		break;
+	case 7:
+		FindFilmbyCashinYear();
+		break;
+	case 8:
+		PrintAmount();
+		break;
+	case 9:
+		DeleteFilm(selectedindex);
+		break;
+	case 10:
+		SaveToFile();
+		ReadFromFile();
+		break;
+	}
+}

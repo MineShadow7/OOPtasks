@@ -50,4 +50,14 @@ public:
 	void FilmSortByName();
 	void GetArr();
 	void ReadFromFile();
+	void StartScreen();
+	void CreateFilm();
+	void EditFilmbyName();
+	void FindFilmbyNameandDate();
+	void FindFilmbyDate();
+	void FindFilmbyCash();
+	void FindFilmbyCashinYear();
+	void PrintAmount();
+	void DeleteFilm(int index);
+	void SaveToFile();
 };

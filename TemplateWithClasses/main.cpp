@@ -27,6 +27,7 @@ int main()
 	cout << "Sort arrays" << endl;
 	lib1.FilmSortByName();
 	lib1.PrintArr();
+	lib1.StartScreen();
 	system("Pause");
 
 }
