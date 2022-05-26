@@ -68,37 +68,9 @@ void FilmLib::FilmSortByName() {
 		}
 	}
 }
-void FilmLib::GetArr() {
-	char buf[80];
-	double cash;
-	cin.ignore(4096, '\n');
-	for (int i = 0; i < filmAmount; i++) {
-		cout << "Name=> ";
 
-		cin.getline(buf, 80, '\n');
-		allFilms[i].setName(buf);
-		cout << endl;
-
-		cout << "Scenarist=> ";
-		cin.getline(buf, 80, '\n');
-		allFilms[i].setScenar(buf);
-		cout << endl;
-
-		cout << "Composer=> ";
-		cin.getline(buf, 80, '\n');
-		allFilms[i].setCompos(buf);
-		cout << endl;
-
-		cout << "Date=> ";
-		cin.getline(buf, 80, '\n');
-		allFilms[i].setDate(buf);
-		cout << endl;
-
-		allFilms[i].setCash(0);
-	}
-}
 void FilmLib::ReadFromFile() {
-	ifstream file("C:\\Users\\shad-\\Documents\\Programming\\OOPtasks\\Films\\Films.txt");
+	ifstream file(path);
 	string s;
 	int index = 0;
 	int i = 0;
@@ -129,6 +101,37 @@ void FilmLib::ReadFromFile() {
 	file.close();
 }
 
+void FilmLib::SaveToFile() {
+	string s;
+	int index = 0;
+	int i = 0;
+	fstream file(path, ios::out);  //Clear File
+	file.close();
+	ofstream out;
+	out.open(path);
+	if (out.is_open()) {
+		out << filmAmount << endl;
+		for (int k = 0; k < filmAmount; k++) {
+			out << allFilms[k].getName() << endl;
+			out << allFilms[k].getScenar() << endl;
+			out << allFilms[k].getCompos() << endl;
+			out << allFilms[k].getDate() << endl;
+			out << allFilms[k].getCash() << endl;
+			out << endl;
+		}
+	}
+	cout << "End of writing" << endl;
+
+}
+
+void FilmLib::CreateFilm() {
+	int nFilmAmount;
+	cout << "Adding a new film to the library. You'll need to input a new info for the film." << endl;
+	cout << "If the field info for the film is unknown, type '-' to skip it." << endl;
+	nFilmAmount = filmAmount + 1;
+	FilmLib nFilm(nFilmAmount);
+}
+/*
 void FilmLib::StartScreen() {
 	system("CLS");
 	int selectedchoice;
@@ -182,3 +185,4 @@ void FilmLib::StartScreen() {
 		break;
 	}
 }
+*/

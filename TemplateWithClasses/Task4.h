@@ -38,6 +38,7 @@ class FilmLib {
 protected:
 	int filmAmount;
 	Film* allFilms;
+	string path = "C:\\Users\\itmm-da\\Desktop\\Programming\\OOPtasks\\Films\\Films.txt";
 public:
 	FilmLib(int count) {
 		filmAmount = count;
@@ -48,9 +49,8 @@ public:
 	}
 	void PrintArr();
 	void FilmSortByName();
-	void GetArr();
 	void ReadFromFile();
-	void StartScreen();
+	//void StartScreen();
 	void CreateFilm();
 	void EditFilmbyName();
 	void FindFilmbyNameandDate();
@@ -60,4 +60,13 @@ public:
 	void PrintAmount();
 	void DeleteFilm(int index);
 	void SaveToFile();
+
+	FilmLib operator=(const FilmLib& r) {
+		if (this == &r) {
+			return *this;
+		}
+		for (int i = 0; i < filmAmount; i++) {
+			//тут все поля которые мы запишем в файл.
+		}
+	}
 };

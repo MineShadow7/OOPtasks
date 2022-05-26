@@ -14,8 +14,8 @@ int main()
 {
 
 	int count;
-	string test;
-	ifstream file("C:\\Users\\shad-\\Documents\\Programming\\OOPtasks\\Films\\Films.txt");
+	string path = "C:\\Users\\itmm-da\\Desktop\\Programming\\OOPtasks\\Films\\Films.txt";
+	ifstream file(path);
 	file >> count;
 	file.close();
 	FilmLib lib1(count);
@@ -27,7 +27,8 @@ int main()
 	cout << "Sort arrays" << endl;
 	lib1.FilmSortByName();
 	lib1.PrintArr();
-	lib1.StartScreen();
+	lib1.SaveToFile();
+	//lib1.StartScreen();
 	system("Pause");
 
 }
